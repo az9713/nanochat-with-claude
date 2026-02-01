@@ -204,6 +204,14 @@ This repository includes Claude Code skills for AI-assisted development. These s
 | `/explain <module>` | Architecture explainer with diagrams |
 | `/rent-gpu` | Cloud GPU rental guide |
 
+### Visualization Skills
+| Command | Description |
+|---------|-------------|
+| `/visualize` | Create animated videos with Remotion |
+| `/remotion-setup` | Set up Remotion project for visualizations |
+
+Generate educational videos explaining transformer architecture, training dynamics, attention patterns, and scaling laws using [Remotion](https://remotion.dev).
+
 See [docs/CLAUDE_CODE_INTEGRATION.md](docs/CLAUDE_CODE_INTEGRATION.md) for full documentation.
 
 ## Experiment Log

@@ -84,6 +84,15 @@ claude
 
 Modules: `gpt`, `attention`, `mlp`, `optimizer`, `dataloader`, `rotary`, `tokenizer`, `engine`
 
+### Visualization
+
+| Command | Description |
+|---------|-------------|
+| `/visualize` | Create animated educational videos with Remotion |
+| `/remotion-setup` | Set up a Remotion project for nanochat visualizations |
+
+The visualization skills leverage [Remotion](https://remotion.dev), a React-based video framework, to create educational animations explaining LLM architectures and training dynamics.
+
 ## Example Workflows
 
 ### Workflow 1: First Time Setup
@@ -180,6 +189,35 @@ curl -sSL .../setup.sh | bash
 bash runs/speedrun.sh
 ```
 
+### Workflow 5: Creating Educational Videos
+
+```
+You: /visualize
+
+Claude: [Uses /visualize skill]
+
+What would you like to visualize?
+1. Transformer Architecture - Layer-by-layer animation
+2. Training Loss - Dynamic curve with annotations
+3. Attention Mechanism - Animated attention patterns
+4. Scaling Laws - Chinchilla curves visualization
+
+You: Create a transformer architecture video
+
+Claude: [Creates Remotion component]
+
+I've created TransformerArchitecture.tsx with:
+- Animated layer-by-layer assembly
+- Color-coded components (Attention, MLP, Norm)
+- nanochat-specific features highlighted
+- Dark theme matching nanochat style
+
+To render:
+  cd nanochat-visualizations
+  npm run dev  # Preview at localhost:3000
+  npx remotion render TransformerArchitecture out/transformer.mp4
+```
+
 ## Agents
 
 Claude Code includes specialized agents that can be invoked for complex tasks:
@@ -236,6 +274,54 @@ At session start:
 - Lists quick commands
 - Checks virtual environment
 
+## Visualization with Remotion
+
+Create educational videos explaining nanochat architecture and training concepts using [Remotion](https://remotion.dev), a React-based video framework.
+
+### Available Visualizations
+
+| Type | Description |
+|------|-------------|
+| Transformer Architecture | Layer-by-layer animation of nanochat's GPT model |
+| Training Loss | Animated loss curves with diagnostic annotations |
+| Attention Mechanism | Interactive attention pattern visualization |
+| Scaling Laws | Chinchilla curves and compute/performance tradeoffs |
+| Data Pipeline | Token flow from raw text to training batches |
+
+### Quick Start
+
+```bash
+# Set up Remotion project
+npm create video@latest nanochat-visualizations
+cd nanochat-visualizations
+npm install
+
+# Preview in browser
+npm run dev  # Opens http://localhost:3000
+
+# Render video
+npx remotion render TransformerArchitecture out/transformer.mp4
+
+# Render GIF for documentation
+npx remotion render TransformerArchitecture out/transformer.gif --codec gif
+```
+
+### Why Remotion?
+
+- **React-based**: Use familiar JSX for video creation
+- **Frame-precise**: Every animation is a function of the current frame
+- **Hot reload**: Instant preview updates during development
+- **Multiple formats**: Export MP4, GIF, WebM, ProRes
+- **Official Claude Code skills**: [remotion-dev/skills](https://github.com/remotion-dev/skills) provides best practices
+
+### Example Components
+
+The `/visualize` skill provides ready-to-use components:
+- `TransformerArchitecture`: Animated layer stack with nanochat specifics
+- `TrainingLoss`: Loss curve with spike/plateau annotations
+- `AttentionVisualization`: Animated attention weight matrices
+- `ScalingLaws`: Parameter-performance curves
+
 ## File Structure
 
 ```
@@ -252,7 +338,9 @@ At session start:
 │   ├── gpu-check.md
 │   ├── explain.md
 │   ├── rent-gpu.md
-│   └── scaling.md
+│   ├── scaling.md
+│   ├── visualize.md             # Remotion video creation
+│   └── remotion-setup.md        # Remotion project setup
 ├── agents/                    # Specialized agents
 │   ├── training-monitor.md
 │   ├── experiment-tracker.md
@@ -373,3 +461,6 @@ The skills and agents in this integration were designed based on analysis of rea
 - [nanochat README](../README.md)
 - [nanochat CLAUDE.md](../CLAUDE.md)
 - [Claude Code Documentation](https://docs.anthropic.com/claude-code)
+- [Remotion Documentation](https://www.remotion.dev/docs)
+- [Remotion AI Skills](https://www.remotion.dev/docs/ai/skills)
+- [claude-code-remotion](https://github.com/az9713/claude-code-remotion) - Reference Remotion project
